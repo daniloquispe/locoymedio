@@ -1,0 +1,780 @@
+/*
+ Theme name: Loco y medio
+ Text domain: locoymedio
+ Author: Danilo Alejandro Quispe Lucana
+ Description: Un tema maquetado con Bootstrap 4 e inspirado principalmente en el tema Fictive 1.1.2, con algunos toques del tema Sorbet 1.2.3 (ambos temas antiguos de Automattic) y otros toques míos :)
+ Tags: Loco y medio, locoymedio, a medida, isolperu, bootstrap, bootstrap 4, font awesome
+ Version: 0.7.6.2
+ */
+
+@charset "UTF-8";
+
+/*********************/
+/* Estilos generales */
+/*********************/
+
+:root
+{
+	--color-primario: #bd5532;
+	--color-secundario: #6f9d9f;
+	/* Formatos de entrada */
+	--color-formato-aside: #d68265;
+	--color-formato-status: #242d36;
+	/* Redes sociales */
+	--color-red-twitch: #924afe;
+}
+
+body
+{
+	background-color: #efedea;
+	color: #656e7f;
+	font-family: Catamaran, "Source Sans Pro", Lato, Helvetica, Arial, sans-serif;
+	text-align: justify;
+}
+
+a
+{
+	color: var(--color-primario);
+	transition: all 0.1s ease-in;
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	-o-transition: all 0.2s ease-in;
+}
+a:hover  { color: #6f9d9f; }
+
+main  { margin-top: 80px; }
+
+img.avatar  { border-radius: 50%; }
+
+/* Alineaciones */
+
+.aligncenter
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/************/
+/* Cabecera */
+/************/
+
+#zlogo h1
+{
+	font-family: "Roboto Slab";
+	text-align: left;
+}
+
+@media all and (max-width: 767px)
+{
+	#zlogo 	{ text-align: center; }
+}
+
+/*****************/
+/* Pie de página */
+/*****************/
+
+#zpie
+{
+	margin: 27px auto 0;
+	padding: 27px;
+	border-top: 5px solid #1a2027;
+	background-color: #242d36;
+	color: #f0f1f3;
+	font-size: 0.8em;
+	text-align: center;
+}
+
+/******************/
+/* Menú principal */
+/******************/
+
+#zmenupribusc  { background-color: #6f9d9f; }
+
+#zmenupri  { background-color: #6f9d9f; }
+
+#menupri li
+{
+	display: inline-block;
+	margin: 0;
+	position: relative;
+}
+
+#menupri li:active,
+#menupri li.current_page_item  { background: #bd5532; }
+
+#menupri a
+{
+	padding: 16px 14px;
+	display: block;
+	color: #fff;
+}
+
+/**************************/
+/* Menú de redes sociales */
+/**************************/
+
+#zmenusocial-sup
+{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: right;
+}
+
+#menusocial-sup li a
+{
+	text-align: center;
+	text-decoration: none;
+}
+
+#menusocial-sup li a:hover::before
+{
+	transition: all 0.1s ease-in;
+	transform: scale(1.2);
+}
+
+#menusocial-sup li a::before
+{
+	content: "\f135";
+	display: block;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	padding: 5px;
+	font-family: FontAwesome;
+	font-size: 20px;
+	vertical-align: middle;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@media all and (max-width: 767px)
+{
+	#zmenusocial-sup  { text-align: center; }
+}
+
+/* Facebook */
+
+#menusocial-sup li a[href*="facebook.com"]::before
+{
+	content: "\f09a";
+	color: #39599f;
+}
+#menusocial-sup li a[href*="facebook.com"]:hover::before
+{
+	background-color: #39599f;
+	color: #fff;
+}
+
+/* Twitter */
+
+#menusocial-sup li a[href*="twitter.com"]::before
+{
+	content: "\f099";
+	color: #45b0e3;
+}
+#menusocial-sup li a[href*="twitter.com"]:hover::before
+{
+	background-color: #45b0e3;
+	color: #fff;
+}
+
+/* YouTube */
+
+#menusocial-sup li a[href*="youtube.com"]::before,
+#menusocial-sup li a[href*="youtu.be"]::before
+{
+	content: "\f16a";
+	color: #cc181e;
+}
+#menusocial-sup li a[href*="youtube.com"]:hover::before,
+#menusocial-sup li a[href*="youtu.be"]:hover::before
+{
+	background-color: #cc181e;
+	color: #fff;
+}
+
+/* Wikipedia */
+
+#menusocial-sup li a[href*="wikipedia.org"]::before
+{
+	content: "\f266";
+	color: #333;
+}
+#menusocial-sup li a[href*="wikipedia.org"]:hover::before
+{
+	background-color: #333;
+	color: #fff;
+}
+
+/* SoundCloud */
+
+#menusocial-sup li a[href*="soundcloud.com"]::before
+{
+	content: "\f1be";
+	color: #f50;
+}
+#menusocial-sup li a[href*="soundcloud.com"]:hover::before
+{
+	background-color: #f50;
+	color: #fff;
+}
+
+/* Twitch */
+
+#menusocial-sup li a[href*="twitch.tv"]::before
+{
+	content: "\f1e8";
+	color: var(--color-red-twitch);
+}
+#menusocial-sup li a[href*="twitch.tv"]:hover::before
+{
+	background-color: #fff;
+/*	color: var(--color-red-twitch);*/
+}
+
+/************/
+/* Buscador */
+/************/
+
+#fbusc
+{
+	padding: 10px 15px 0;
+	text-align: right;
+}
+
+@media all and (max-width: 767px)
+{
+	#fbusc
+	{
+		padding: 20px 15px;
+		text-align: center;
+	}
+}
+
+/*********************/
+/* Lista de entradas */
+/*********************/
+
+.zentrada-lista  { margin: 0 0 72px; }
+
+.zentrada-lista h1,
+.zentrada-lista h2,
+.zentrada-lista h3,
+.zentrada-lista h4,
+.zentrada-lista h5,
+.zentrada-lista h6  { font-family: "Roboto Slab"; }
+
+.zentrada-lista > a
+{
+	display: block;
+	overflow: hidden;
+}
+
+.zentrada-lista .wp-post-image
+{
+	width: 100%;
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+}
+.zentrada-lista .wp-post-image:hover
+{
+	transform: scale(1.05);
+	-webkit-transform: scale(1.1);
+}
+
+.zentrada-lista header ul,
+.zentrada-lista header ul a  { color: #ada393; }
+
+.zentrada-lista header .list-inline-item:not(:last-child)  { margin-right: 20px; }
+
+.zentrada-lista article
+{
+	border-top-width: 8px;
+	border-top-style: solid;
+	position: relative;
+	background-color: #fff;
+}
+
+.zentrada-lista h1  { line-height: 1.2em; }
+
+.zentrada-lista h1 a  { color: #bd5532; }
+
+.zentrada-lista a.more-link
+{
+	color: #ada393;
+	font-size: 0.8125em;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+/* Cajetín de título (categorías, etiquetas, búsqueda) */
+
+.cajetin-titulo  { color: #6f9d9f; }
+
+.cajetin-titulo a
+{
+	color: #6f9d9f;
+	text-decoration: underline;
+}
+.cajetin-titulo a:hover
+{
+	color: var(--color-primario);
+}
+
+.cajetin-titulo > p.lead  { font-family: "Roboto Slab"; }
+
+/* Formatos de entrada */
+
+.formato-entrada-wp-post,
+.formato-entrada-wp-  { border-color: #bd5532; }
+.formato-entrada-wp-post::before,
+.formato-entrada-wp-::before
+{
+	background: #bd5532;  /* fa-file-text-o */
+	content: "\f1ea";
+}
+
+.formato-entrada-wp-image  { border-color: #cdd851; }
+.formato-entrada-wp-image::before
+{
+	background: #cdd851;  /* fa-picture-o */
+	content: "\f03e";
+}
+
+.formato-entrada-wp-video  { border-color: #9ba2af; }
+.formato-entrada-wp-video::before
+{
+	background: #9ba2af;  /* fa-play */
+	content: "\f04b";
+}
+
+.formato-entrada-wp-audio  { border-color: #9ba2af; }
+.formato-entrada-wp-audio:before
+{
+	background: #9ba2af;
+	content: "\f04b";
+}
+
+.formato-entrada-wp-gallery  { border-color: #f77e75; }
+.formato-entrada-wp-gallery:before
+{
+	background: #f77e75;  /* fa-th */
+	content: "\f00a";
+}
+
+.formato-entrada-wp-quote  { border-color: #242d36; }
+.formato-entrada-wp-quote::before
+{
+	background: #242d36;  /* fa-quote-right */
+	content: "\f10e";
+}
+
+.formato-entrada-wp-aside  { border-color: var(--color-formato-aside); }
+.formato-entrada-wp-aside::before
+{
+	background: var(--color-formato-aside);
+	content: "\f1ea";  /* fa-file-text-o */
+}
+
+.formato-entrada-wp-status  { border-color: var(--color-formato-status); }
+.formato-entrada-wp-status::before
+{
+	background: var(--color-formato-status);
+	content: "\f075";  /* fa-comment */
+}
+
+.zentrada-lista article::before
+{
+	display: block;
+	position: absolute;
+	top: -44px;
+	left: 50%;
+	z-index: 3;
+	margin-left: -40px;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	color: #fff;
+	font-family: FontAwesome;
+	font-size: 36px;
+	line-height: 80px;
+	text-align: center;
+	vertical-align: text-bottom;
+}
+
+/************/
+/* Paginado */
+/************/
+
+.paginado
+{
+	position: relative;
+	width: 100%;
+}
+
+.paginado a
+{
+	display: block;
+	width: 90px;
+	height: 90px;
+	position: fixed;
+	top: 50%;
+	z-index: 1;
+	border-radius: 50%;
+	background: #9ba2af;
+	color: white;
+	opacity: 0.25;
+	transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	font-size: 40px;
+	line-height: 90px;
+	text-decoration: none;
+}
+
+.paginado a:hover  { opacity: 0.75; }
+
+.paginado .anterior a
+{
+	left: 0;
+	margin-left: -48px;
+	padding-right: 5px;
+	text-align: right;
+}
+
+.paginado .siguiente a
+{
+	right: 0;
+	margin-right: -48px;
+	padding-left: 5px;
+	text-align: left;
+}
+
+/* No móvil */
+
+.paginado-nomovil  { margin: 0 0 72px; }
+
+.paginado-nomovil .enlaces > div > div
+{
+    border: 1px solid #e4e1dc;
+    background-color: #fff;
+}
+
+.paginado-nomovil .enlaces div a
+{
+    display: block;
+    font-family: "Roboto Slab";
+}
+
+.paginado-nomovil .enlaces div a:hover  { text-decoration: none; }
+
+.paginado-nomovil .enlaces a small
+{
+	color: #ada393;
+	font-family: Catamaran;
+	font-size: 0.8125em;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+
+.paginado-nomovil .enlaces img  { max-height: 110px; }
+
+/***********/
+/* Entrada */
+/***********/
+
+.zentrada-lista h2
+{
+	margin-top: 44px;
+	margin-bottom: 18px;
+	color: #bd5532;
+	text-align: left;
+}
+
+.zentrada-lista h3
+{
+	margin: 1.5rem 0 1rem;
+	color: #6f9d9f;
+	text-align: left;
+}
+
+/* Contenido de la entrada */
+
+.entrada .contenido > img,
+.entrada .contenido > p img,
+.entrada .contenido > div.wp-caption,
+.entrada .contenido > div.wp-caption > img
+{
+	max-width: 100%;
+	height: auto;
+}
+
+.entrada .contenido > div.wp-caption.aligncenter  { margin: 0 auto; }
+
+.entrada .contenido .wp-block-image figcaption  { margin-bottom: 0; }
+
+.blockquote
+{
+	border-left: 5px solid rgba(155, 162, 175, 0.25);
+	padding-left: 27px;
+}
+
+/* Categorías y etiquetas */
+
+.zentrada-categorias,
+.zentrada-etiquetas
+{
+	margin: 12px 0;
+	text-align: left;
+	line-height: 1.84em;
+}
+
+.zentrada-categorias a
+{
+	margin: 0 6px 6px 0;
+	padding: 1px 6px 2px;
+	display: inline-block;
+	background-color: #6f9d9f;
+	color: #fff;
+}
+
+.zentrada-etiquetas a
+{
+	margin: 0 6px 6px 0;
+	padding: 1px 6px 2px;
+	display: inline-block;
+	background-color: #f2f2f2;
+	color: #656e7f;
+}
+
+.zentrada-etiquetas a:hover
+{
+	background-color: #6f9d9f;
+	color: #fff;
+	text-decoration: none;
+}
+
+/* Paginado de entrada */
+
+.paginado-entrada
+{
+	padding: 1rem 0;
+	color: #6f9d9f;
+	font-size: 0.8125em;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.paginado-entrada .post-page-numbers
+{
+	display: inline-block;
+	width: 1.5rem;
+	height: 1.5rem;
+	background-color: #fefefe;
+	color: var(--color-secundario);
+	text-align: center;
+}
+.paginado-entrada .post-page-numbers:hover
+{
+	background-color: #ececec;
+	text-decoration: none;
+}
+
+.paginado-entrada .post-page-numbers.current
+{
+	background-color: #ececec;
+	color: var(--color-primario);
+}
+
+/* Imágenes y videos */
+
+.wp-block-image, .wp-block-embed  { background-color: #f1f1f1 }
+
+.wp-block-image img,
+.wp-block-embed > div
+{
+/*	padding: 1rem;*/
+	height: auto;
+	background-color: #f1f1f1;
+}
+
+.wp-caption-text,
+.wp-block-image figcaption,
+.wp-block-embed figcaption
+{
+	padding: 0 0.5em 0.5em;
+/*	color: #7c705e;*/
+	font-size: 90%;
+	text-align: center;
+}
+
+/*.wp-block-embed > div  { background: #efedea; }*/
+
+.embed-youtube > iframe  { max-width: 100%; }
+
+.wp-block-embed-youtube > .wp-block-embed__wrapper
+{
+    position: relative;
+    display: block;
+    width: 100%;
+/*    padding: 0;*/
+    overflow: hidden;
+}
+.wp-block-embed-youtube.wp-embed-aspect-16-9 > .wp-block-embed__wrapper:before
+{
+    display: block;
+    content: '';
+    padding-top: 56.25%;
+}
+.wp-block-embed-youtube.wp-embed-aspect-4-3 > .wp-block-embed__wrapper:before
+{
+    display: block;
+    content: '';
+    padding-top: 75%;
+}
+
+.wp-block-embed-youtube > .wp-block-embed__wrapper > iframe
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Citas */
+
+.wp-block-quote
+{
+    border-left: 5px solid rgba(155, 162, 175, 0.25);
+    padding-left: 27px;
+    font-size: 1.25rem;
+}
+
+/* Relacionados */
+
+#jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post img.jp-relatedposts-post-img
+{
+	max-width: 100%;
+	height: auto;
+}
+
+/*********/
+/* Autor */
+/*********/
+
+.grofile-thumbnail  { border-radius: 50% }
+
+.grofile-meta, .grofile-meta + p  { text-align: center }
+
+.grofile-meta h4  { font-family: "Roboto Slab" }
+
+/***************/
+/* Comentarios */
+/***************/
+
+.comment-reply-title  { font-family: "Roboto Slab"; }
+
+.zcomentarios  { margin: 0 0 72px; }
+
+.zcomentarios > h2
+{
+	color: #ada393;
+	font-family: "Roboto Slab";
+	font-size: 1.25em;
+	line-height: 1.2em;
+	margin-bottom: 48px;
+}
+
+.zcomentarios ul.children  { list-style-type: none; }
+
+.zcomentarios ul.children li  { margin-top: 40px; }
+
+.caja-comentario
+{
+	border: 1px solid #e4e1dc;
+	padding: 48px 48px 24px;
+	position: relative;
+	background-color: #fff;
+}
+
+.caja-comentario.caja-comentario-autor  { border-color: #bd5532; }
+
+.caja-comentario footer p
+{
+	color: #bd5532;
+	font-family: "Roboto Slab";
+	font-size: 1.25em;
+	text-align: center;
+}
+
+.caja-comentario-meta,
+.caja-comentario-meta a  { color: #ada393; }
+
+.caja-comentario-meta .list-inline-item:not(:last-child)  { margin-right: 20px; }
+
+/**********/
+/* Página */
+/**********/
+
+.caja-pagina  { border-top: 8px solid #bd5532 !important; }
+
+.caja-pagina::before
+{
+	background: #bd5532;  /* fa-file-text-o */
+	content: "\f0f6";
+}
+
+/*****************/
+/* Barra lateral */
+/*****************/
+
+.sidebar-widget  { margin-bottom: 36px; }
+
+.sidebar-widget img  { max-width: 100%; }
+
+.sidebar-widget ul
+{
+	list-style: none;
+	padding-left: 0;
+}
+
+.sidebar-widget li
+{
+	border-bottom: 1px dotted rgb(189, 189, 189);
+	padding: 10px 0;
+}
+.sidebar-widget li:last-child  { border-bottom: 0; }
+
+.widgettitle
+{
+	margin: 12px 0;
+	padding: 12px 24px	;
+	border-bottom: 1px solid #e4e1dc;
+	color: #6f9d9f;
+	font-family: "Roboto Slab";
+	font-weight: bold;
+	font-size: 1.25em;
+	text-transform: uppercase;
+	text-align: left;
+	line-height: 1.2em;
+}
+
+/* Calendario de entradas */
+
+.calendar_wrap > table  { width: 100%; }
+
+/**************/
+/* Google Ads */
+/**************/
+
+main > .container > .google-auto-placed,
+main .zentrada-lista + .google-auto-placed  { margin-bottom: 72px; }
+
+article.entrada .contenido .google-auto-placed  { margin-bottom: 1rem; }
